@@ -26,6 +26,8 @@ if (isset($_POST['login'])) {
     $sql->execute(array($login, $senha));
     if ($sql->rowCount() == 1) {
         echo 'Logado!';
+        $logado = true;
+        include('home.php');
     } else {
         echo 'falhou o login!';
     }
